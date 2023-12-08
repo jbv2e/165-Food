@@ -1,5 +1,5 @@
 import { useReducer } from 'react'
-import CartConext from './cart-context'
+import CartContext from './cart-context'
 
 const defaultCartState = {
   items: [],
@@ -11,6 +11,7 @@ const cartReducer = (state, action) => {
     const updatedItems = state.items.concat(action.item)
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -42,9 +43,9 @@ const CartProvider = (props) => {
     removeItem: removeItemFromCartHandler,
   }
   return (
-    <CartConext.Provider value={cartConext}>
+    <CartContext.Provider value={cartConext}>
       {props.children}
-    </CartConext.Provider>
+    </CartContext.Provider>
   )
 }
 
