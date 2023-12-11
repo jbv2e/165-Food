@@ -18,3 +18,8 @@
   background-color: #641e03;
   border-color: #641e03;
 }
+
+.input_left {
+  flex-direction: row;
+  justify-content: end;
+}
